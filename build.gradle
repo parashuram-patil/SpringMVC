@@ -1,0 +1,34 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+apply from: 'gradle.plugin'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+compileJava.options.encoding = 'UTF-8'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+gretty {
+    httpPort = 8091
+    contextPath = '/SpringMVC'
+    servletContainer = 'jetty9'
+    debugPort = 9797
+    debugSuspend = false
+    inplaceMode="hard"
+}
+
+dependencies {
+	compile "org.springframework:spring-webmvc:${springFrameworkVersion}"
+	compile "com.fasterxml.jackson.core:jackson-core:2.7.3"
+	compile "com.fasterxml.jackson.core:jackson-databind:2.7.3"
+	compile "log4j:log4j:1.2.17"
+}
+
+war{
+	archiveName= warName + '-' + project.version.toString() + '.war'
+}
