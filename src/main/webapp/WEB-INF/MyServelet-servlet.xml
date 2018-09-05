@@ -54,6 +54,17 @@
 			</bean>
 		</mvc:message-converters>
 	</mvc:annotation-driven> -->
+	
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean name="protobufHttpMessageConverter"
+				class="org.springframework.http.converter.protobuf.ProtobufHttpMessageConverter">
+			</bean>
+			<bean
+				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
 
 	<!-- <bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
