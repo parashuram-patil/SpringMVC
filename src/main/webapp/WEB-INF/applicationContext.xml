@@ -51,4 +51,12 @@
 	<bean id="elasticSearchIndexName" class="java.lang.String">
 		<constructor-arg value="${elasticsearch.index}" />
 	</bean> -->
+	
+	<!-- TASK EXECUTORS -->
+	<bean id="taskExecutor"
+		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="20" />
+		<property name="maxPoolSize" value="30" />
+		<property name="WaitForTasksToCompleteOnShutdown" value="true" />
+	</bean>
 </beans>
