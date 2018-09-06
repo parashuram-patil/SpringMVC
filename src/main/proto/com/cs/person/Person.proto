@@ -1,5 +1,9 @@
 syntax = "proto3";
 
+package com.cs.person;
+
+import "com/cs/phone/PhoneNumber.proto";
+
 option java_package = "com.cs.proto.compile.person";
 option java_outer_classname = "PersonProto";
 
@@ -7,4 +11,5 @@ message Person {
     string name = 1;
     string email = 2;
     int32 age = 3;
+    repeated com.cs.phone.PhoneNumber phones = 4;
 }
