@@ -15,7 +15,6 @@ public class ProtobufPerformanceTest {
     KlassInstance klassInstance = KlassInstance.parseFrom(input);
     
     Long endTime = System.currentTimeMillis();
-    System.out.println(klassInstance.getId() + " took " + (endTime - startTime) + "ms to deserialize");
+    System.out.println("Protobuf took " + (endTime - startTime) + "ms to deserialize");
   }
-  
 }
