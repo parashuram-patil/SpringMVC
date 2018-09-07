@@ -1,5 +1,6 @@
 package com.cs.controller;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,8 +13,13 @@ import com.cs.proto.compile.person.PhoneNumberProto.PhoneType;
 @Controller
 public class MyProtoController {
   
+  final static Logger logger = Logger.getLogger(MyController.class);
+  
   @RequestMapping(value = "protoBuf", method = RequestMethod.GET, produces = "application/x-protobuf")
   public @ResponseBody Person getPersonProto() {
+    
+    logger.info("getPersonProto() Invoked");
+    
     Person.Builder person = Person.newBuilder();
     person.setAge(27);
     person.setEmail("a@a.a");

@@ -31,8 +31,8 @@
 	<!-- <aop:aspectj-autoproxy /> -->
 
 	<!-- properties file configurations -->
-	<context:property-placeholder
-		location="classpath*:kafkaProperties/*.properties" />
+	<!-- <context:property-placeholder
+		location="classpath*:logging/*.properties" /> -->
 
 	<!-- Variable Auto-wiring file configurations -->
 	<bean id="logServerIP" class="java.lang.String">

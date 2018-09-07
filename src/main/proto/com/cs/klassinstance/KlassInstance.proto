@@ -1,0 +1,236 @@
+syntax = "proto3";
+
+package com.cs.person;
+
+
+option java_package = "com.cs.proto.compile.klassInstance";
+option java_outer_classname = "KlassInstanceProto";
+
+message KlassInstance{
+	 string id = 1;
+	 sint64 versionId = 2;
+	 sint64 versionTimestamp = 3;
+	 string lastModifiedBy = 4;
+	 string createdBy = 5;
+	 sint64 createdOn = 6;
+	 string owner = 7;
+	 sint64 lastModified = 8;
+	 string jobId = 9;
+	 string name = 10;
+	 string baseType = 11;
+	 string componentId = 12;
+	message IContentAttributeInstance{
+		 string id = 1;
+		 sint64 versionId = 2;
+		 sint64 versionTimestamp = 3;
+		 string lastModifiedBy = 4;
+		 string createdBy = 5;
+		 sint64 createdOn = 6;
+		 string owner = 7;
+		 sint64 lastModified = 8;
+		 string jobId = 9;
+		 sint64 klassInstanceVersion = 10;
+		 string baseType = 11;
+		message Entry_notification{
+			 string key = 1;
+			message Object{
+			}
+			 KlassInstance.IContentAttributeInstance.Entry_notification.Object value = 2;
+		}
+		repeated Entry_notification notification = 12;
+		 string klassInstanceId = 13;
+		 string variantInstanceId = 14;
+		 string attributeId = 15;
+		 string value = 16;
+		 double valueAsNumber = 17;
+		 string valueAsHtml = 18;
+		message IConcatenatedOperator{
+			 string type = 1;
+			 sint32 order = 2;
+			 string id = 3;
+			 string code = 4;
+		}
+		repeated KlassInstance.IContentAttributeInstance.IConcatenatedOperator valueAsExpression = 19;
+		 bool isMandatoryViolated = 20;
+		 bool isShouldViolated = 21;
+		message IAttributeConflictingValue{
+			 string couplingType = 1;
+			message IConflictingValueSource{
+				 string type = 1;
+				 string id = 2;
+				 string contentId = 3;
+			}
+			repeated KlassInstance.IContentAttributeInstance.IAttributeConflictingValue.IConflictingValueSource source = 2;
+			 bool isMandatory = 3;
+			 bool isShould = 4;
+			 string value = 5;
+			 string valueAsHtml = 6;
+		}
+		repeated KlassInstance.IContentAttributeInstance.IAttributeConflictingValue conflictingValues = 22;
+		 bool isMatchAndMerge = 23;
+		message IContextInstance{
+			 string id = 1;
+			repeated string tagInstanceIds = 2;
+			 string contextId = 3;
+			message IInstanceTimeRange{
+				 sint64 from = 1;
+				 sint64 to = 2;
+			}
+			repeated KlassInstance.IContentAttributeInstance.IContextInstance.IInstanceTimeRange timeRange = 4;
+			message IIdAndBaseType{
+				 string id = 1;
+				 string baseType = 2;
+			}
+			repeated KlassInstance.IContentAttributeInstance.IContextInstance.IIdAndBaseType linkedInstances = 5;
+		}
+		repeated KlassInstance.IContentAttributeInstance.IContextInstance context = 24;
+		message ITagInstance{
+			 string id = 1;
+			 sint64 versionId = 2;
+			 sint64 versionTimestamp = 3;
+			 string lastModifiedBy = 4;
+			 string createdBy = 5;
+			 sint64 createdOn = 6;
+			 string owner = 7;
+			 sint64 lastModified = 8;
+			 string jobId = 9;
+			 sint64 klassInstanceVersion = 10;
+			 string baseType = 11;
+			message Entry_notification{
+				 string key = 1;
+				 KlassInstance.IContentAttributeInstance.Entry_notification.Object value = 2;
+			}
+			repeated Entry_notification notification = 12;
+			 string klassInstanceId = 13;
+			 string variantInstanceId = 14;
+			 string tagId = 15;
+			message ITagInstanceValue{
+				 string id = 1;
+				 sint32 relevance = 2;
+				 string timestamp = 3;
+				 string tagId = 4;
+				 sint64 versionId = 5;
+				 sint64 versionTimestamp = 6;
+				 string lastModifiedBy = 7;
+			}
+			repeated KlassInstance.IContentAttributeInstance.ITagInstance.ITagInstanceValue tagValues = 16;
+			 string variantOf = 17;
+			repeated KlassInstance.IContentAttributeInstance.ITagInstance tags = 18;
+			message ITagConflictingValue{
+				 string couplingType = 1;
+				 KlassInstance.IContentAttributeInstance.IAttributeConflictingValue.IConflictingValueSource source = 2;
+				 bool isMandatory = 3;
+				 bool isShould = 4;
+				message IIdRelevance{
+					 sint32 relevance = 1;
+					 string tagId = 2;
+					 string id = 3;
+				}
+				repeated KlassInstance.IContentAttributeInstance.ITagInstance.ITagConflictingValue.IIdRelevance tagValues = 5;
+			}
+			repeated KlassInstance.IContentAttributeInstance.ITagInstance.ITagConflictingValue conflictingValues = 19;
+			 bool isMatchAndMerge = 20;
+			 bool isMandatoryViolated = 21;
+			 string contextInstanceId = 22;
+			 bool isShouldViolated = 23;
+			 bool isConflictResolved = 24;
+		}
+		repeated KlassInstance.IContentAttributeInstance.ITagInstance tags = 25;
+		 string originalInstanceId = 26;
+		message IDuplicateTypeAndInstanceIds{
+			 string typeId = 1;
+			repeated string duplicateKlassInstanceIds = 2;
+		}
+		repeated KlassInstance.IContentAttributeInstance.IDuplicateTypeAndInstanceIds duplicateStatus = 27;
+		 sint32 isUnique = 28;
+		 bool isConflictResolved = 29;
+	}
+	repeated KlassInstance.IContentAttributeInstance attributes = 13;
+	repeated KlassInstance.IContentAttributeInstance.ITagInstance tags = 14;
+	repeated string roles = 15;
+	repeated string types = 16;
+	repeated string taxonomyIds = 17;
+	repeated string selectedTaxonomyIds = 18;
+	 string organizationId = 19;
+	 string physicalCatalogId = 20;
+	 string logicalCatalogId = 21;
+	 string systemId = 22;
+	 string endpointId = 23;
+	 string originalInstanceId = 24;
+	 string defaultAssetInstanceId = 25;
+	 string branchOf = 26;
+	 string versionOf = 27;
+	message IRuleViolation{
+		 string id = 1;
+		 string entityId = 2;
+		 string color = 3;
+		 string description = 4;
+		 string type = 5;
+		 string ruleId = 6;
+		 string ruleLabel = 7;
+		 string calculatedAttributeUnit = 8;
+		 string calculatedAttributeUnitAsHTML = 9;
+	}
+	repeated KlassInstance.IRuleViolation ruleViolation = 28;
+	message IMessageInformation{
+		 sint32 notificationsCounter = 1;
+		 bool isRed = 2;
+		 bool isOrange = 3;
+		 bool isYellow = 4;
+		 bool isGreen = 5;
+		 sint32 redCount = 6;
+		 sint32 orangeCount = 7;
+		 sint32 yellowCount = 8;
+		 string validityMessage = 9;
+	}
+	repeated KlassInstance.IMessageInformation messages = 29;
+	 KlassInstance.IContentAttributeInstance.IContextInstance context = 30;
+	message IKlassInstanceVersionSummary{
+		 sint32 lifeCycleStatusChanged = 1;
+		 sint32 listStatusChanged = 2;
+		 sint32 attributeChanged = 3;
+		 sint32 tagChanged = 4;
+		 sint32 relationshipChanged = 5;
+		 sint32 natureRelationshipChanged = 6;
+		 sint32 roleChanged = 7;
+		 sint32 eventScheduleChanged = 8;
+		 sint32 klassAdded = 9;
+		 sint32 taxonomyAdded = 10;
+		 sint32 klassRemoved = 11;
+		 sint32 taxonomyRemoved = 12;
+		message IIdAndType{
+			 string id = 1;
+			 string type = 2;
+		}
+		repeated KlassInstance.IKlassInstanceVersionSummary.IIdAndType attributeInstanceIds = 13;
+		repeated string tagInstanceIds = 14;
+		repeated string relationshipIds = 15;
+		repeated string natureRelationshipIds = 16;
+		 bool isDefaultAssetInstanceIdChanged = 17;
+		 sint32 mamValidityChanged = 18;
+	}
+	repeated KlassInstance.IKlassInstanceVersionSummary summary = 31;
+	message IContentIdentifier{
+		 string organizationId = 1;
+		 string physicalCatalogId = 2;
+		 string logicalCatalogId = 3;
+		 string systemId = 4;
+		 string endpointId = 5;
+	}
+	repeated KlassInstance.IContentIdentifier partnerSources = 32;
+	 string klassInstanceId = 33;
+	 string parentVariantId = 34;
+	 bool isSkipped = 35;
+	 bool isFromExternalSource = 36;
+	repeated string path = 37;
+	repeated string relationships = 38;
+	repeated string natureRelationships = 39;
+	repeated string variants = 40;
+	message IIdAndVersionId{
+		 string id = 1;
+		 sint64 versionId = 2;
+	}
+	repeated KlassInstance.IIdAndVersionId attributeVariants = 41;
+	 bool isMerged = 42;
+}
+
