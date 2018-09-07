@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'war'
-apply from: 'gradle.plugin'
+apply from: 'gretty.plugin'
 apply plugin: 'com.google.protobuf'
 
 sourceCompatibility = 1.8
