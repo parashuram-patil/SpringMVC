@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.cs.proto.compile.person.PersonProto.Person;
-import com.cs.proto.compile.person.PhoneNumberProto.PhoneNumber;
-import com.cs.proto.compile.person.PhoneNumberProto.PhoneType;
+import com.cs.proto.model.PersonProto.Person;
+import com.cs.proto.model.PhoneNumberProto.PhoneNumber;
+import com.cs.proto.model.PhoneNumberProto.PhoneType;
 
 @Controller
 public class MyProtoController {

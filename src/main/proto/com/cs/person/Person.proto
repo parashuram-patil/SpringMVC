@@ -4,7 +4,7 @@ package com.cs.person;
 
 import "com/cs/phone/PhoneNumber.proto";
 
-option java_package = "com.cs.proto.compile.person";
+option java_package = "com.cs.proto.model";
 option java_outer_classname = "PersonProto";
 
 message Person {

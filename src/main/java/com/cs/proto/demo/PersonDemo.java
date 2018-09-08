@@ -1,10 +1,10 @@
-package com.cs.proto.person;
+package com.cs.proto.demo;
 
 import java.io.IOException;
 
-import com.cs.proto.compile.person.PersonProto.Person;
-import com.cs.proto.compile.person.PhoneNumberProto.PhoneNumber;
-import com.cs.proto.compile.person.PhoneNumberProto.PhoneType;
+import com.cs.proto.model.PersonProto.Person;
+import com.cs.proto.model.PhoneNumberProto.PhoneNumber;
+import com.cs.proto.model.PhoneNumberProto.PhoneType;
 import com.google.protobuf.util.JsonFormat;
 
 public class PersonDemo {

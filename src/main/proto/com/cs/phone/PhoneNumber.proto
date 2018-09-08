@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package com.cs.phone;
 
-option java_package = "com.cs.proto.compile.person";
+option java_package = "com.cs.proto.model";
 option java_outer_classname = "PhoneNumberProto";
 
 enum PhoneType {

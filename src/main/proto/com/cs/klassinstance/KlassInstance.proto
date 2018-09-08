@@ -3,7 +3,7 @@ syntax = "proto3";
 package com.cs.person;
 
 
-option java_package = "com.cs.proto.compile.klassInstance";
+option java_package = "com.cs.proto.model";
 option java_outer_classname = "KlassInstanceProto";
 
 message KlassInstance{
